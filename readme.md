@@ -4,6 +4,7 @@ step1:
     在github上创建一个工程
 
 step2:
+
     在创建的文件夹中打开git Bash
     然后输入命令
     git init  初始化
@@ -17,6 +18,7 @@ step2:
     git push origin master
 
 ssh key的设置
+
     cd ~  cd到家目录下
     pwd
     ls -a
