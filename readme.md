@@ -1,4 +1,4 @@
-step1:
+#step1:
     创建一个新文件夹
     在github上创建一个工程
 step2:
@@ -27,5 +27,5 @@ ssh key的设置
     然后点击 New SSH key  
     然后 随便填写名字
     然后把  在gitBash里面的key 粘贴到 key输入框里面
-    
+
     

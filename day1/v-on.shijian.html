@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{arr}}
+        <!-- v-on:缩写 @ -->
+        <button v-on:click='add(555)'>向数组添加一个元素</button>
+
+        <button v-on:click='show'>show</button>
+        <button v-on:mouseover=''>鼠标进过</button>
+        <button v-on:dblclick='show'>双击鼠标</button>
+
+    </div>
+</body>
+<script>
+    var v = new Vue({
+        el:'#app',
+        data:{
+            arr:['12','14','44']
+        },
+        methods:{//写方法在methods里面写
+            show:function(){
+                console.log('调用了show方法')
+            },
+            add:function(data){
+                this.arr.push(data);
+            }
+        }
+    })
+</script>
+</html>

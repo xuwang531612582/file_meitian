@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{m}}<br/>
+        {{num>5?'yes':'no'}}
+        <p>{{xuwang}}</p>
+        <div v-text='hl'></div>
+        <div v-html='hl'></div>
+        <input type="text" v-model='num'>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            m:'Hello Vue',
+            xuwang:'wang',
+            num:10,
+            hl:'<h1>my mane is xuwang</h1>'
+        }
+    })
+    app.m = 'hello xuwang';
+</script>
+</html>

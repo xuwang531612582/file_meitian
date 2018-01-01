@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{m}}
+        <button id="btn">树洞</button>
+
+        <button onclick='change()'>更新</button>
+        <button onclick='destroy()'>销毁</button>
+    </div>
+</body>
+<script>
+    
+    var v = new Vue({
+        el:'#app',
+        data:{
+            m:'hello wang'
+
+        },
+        beforeCreate(){
+            alert('实例创建');
+        },
+        created(){
+            alert('实例已经创建完成');
+        },
+        beforeMount(){
+            alert('实例挂载前');
+        },
+        mounted(){
+            $('#btn').click(function(){
+            alert('快一点半做车');
+        });
+        },
+        beforeUpdate(){
+            alert('数据更新前');
+        },
+        updated(){
+            alert('数据已经更改')
+        },
+        beforeDestroy(){
+            alert('实例销毁前');
+        },
+        destroyed(){
+            alert('实例已经销毁');
+        }
+    });
+    function change(){
+        v.m = 'xuwang hello';
+    }
+    function destroy(){
+        v.$destroy();
+    }
+</script>
+</html>

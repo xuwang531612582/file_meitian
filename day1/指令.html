@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app" v-if='seen'>
+        <p v-if='seen2'>看的见我</p>
+
+        <p :id='id'>id的值为{{id}}</p>
+        <img :src="imgs" style='width:100px;'/>
+        <a :href="ht"></a>
+    </div>
+</body>
+<script>
+    var data = {
+        m:'hello stark',
+        id:'000',
+        seen:true,
+        seen2:false,
+        imgs:'https://vuejs.org/images/logo.png',
+        ht:'http://www.baidu.com'
+    }
+    var app = new Vue({
+        el:'#app',
+        data:data
+    })
+</script>
+</html>
