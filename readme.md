@@ -1,6 +1,8 @@
-#step1:
+step1:
+    
     创建一个新文件夹
     在github上创建一个工程
+
 step2:
     在创建的文件夹中打开git Bash
     然后输入命令
