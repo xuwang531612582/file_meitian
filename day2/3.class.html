@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+    <style>
+        .fontSize{
+            font-size:50px;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="index_3">
+        <span class="fontSize" :class="{red:addClass}">坐席监控</span>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#index_3',
+        data:{
+            addClass:true
+        }
+
+    })
+    vm.addClass = false;
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="box">
+        <aaa>
+            <p slot="three">1</p>
+            <p slot="two">2</p>
+            <p slot="one">3</p>
+        </aaa>
+    </div>    
+</body>
+<script>
+    Vue.component('aaa',{
+        template:`
+            <div>
+                <slot name="one"><p>第一个位置</p></slot>
+                <slot name="two"><p>第二个位置</p></slot>
+                <slot name="three"><p>第三个位置</p></slot>
+            </div>
+        `
+    })
+    new Vue({
+        el:'#box'
+    })
+</script>
+</html>

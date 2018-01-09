@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+    <div id="components">
+        <xuwang text='首页'>
+
+                <div slot='three'>1</div>
+                <div slot='two'>2</div>
+                <div slot='one'>3</div>
+                <div slot='four'>4</div>
+        </xuwang>
+        <div>{{str}}</div>
+        <div>{{box}}</div>
+       <div v-for='val in arr'>{{val}}</div>
+       <div @click="changs">{{num}}</div>
+
+    </div>
+    
+</body>
+    <script>
+        var vm = new Vue({
+            el:'#components',
+            data:{
+                            num:3,
+                            arr:['麻辣','米粉','便便面'],
+                            str:'duolaimifashuo',
+                            box:'盒子'
+                    },
+            components:{
+               'xuwang':{ 
+                    template:`
+                        <div>
+                            <slot name='four'>{{text}}</slot>
+                            <slot name='one'>来吧</slot>
+                            <slot name='two'>来吧</slot>
+                            <slot name='three'>来吧</slot>
+                        </div>
+                    `,
+                     props:['text']
+                },
+                'www':{
+                    template:`
+                        <div>
+                            <h3>{{code}}</h3>
+                        </div>
+                    `,
+                    props:['code']  
+                    
+                }
+            },
+            methods:{
+                        changs(){
+                            this.num = 4
+                        }
+                    }
+        })
+    </script>
+</html>

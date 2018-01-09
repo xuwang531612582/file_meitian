@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>template模块</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+</head>
+<body>
+    <div id="index_1">
+        <span>首页1</span>
+    </div>
+    <div>首页2</div>
+    <script type="x-templat" id="temp">
+        <div>
+            code:{{code}}
+        </div>
+    </script>
+
+</body>
+<script>
+    var vm = new Vue({
+        el:'#index_1',
+        data:{
+            code:'10000',
+            bool:false,
+            html:'<div>商品详情</div>'
+        },
+        template:'#temp'
+        //将id名为index_1的div替换成id名为temp里面的内容
+    })
+</script>
+</html>

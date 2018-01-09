@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+</head>
+<body>
+    <div id="index_4">
+        <xuwang>
+            <ul slot="one">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </xuwang>
+    </div>
+    <template id="indextemp">
+        <div>
+            <h1>
+                slot 开始
+            </h1>
+            <slot name='one'>
+                ul-slot 位置
+            </slot>
+        </div>
+       
+    </template>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#index_4',
+        data:{
+        },
+        components:{//组件
+            'xuwang':{
+                template:'#indextemp'
+            }
+        }
+    })
+</script>
+</html>

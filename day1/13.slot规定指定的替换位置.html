@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <xuwang>
+            <div slot='one'>
+                我要替换三个位置
+            </div>
+            <div slot='two'>
+                我要替换二个位置
+            </div>
+            <div slot='three'>
+                我要替换一个位置
+            </div>
+            <div>我们的啥看法看到了撒</div>
+        </xuwang>
+
+    </div>
+</body>
+<script>
+    Vue.component('xuwang',{
+       template:`
+        <div>
+            <slot name="one">
+                <p>第一个位置</p>    
+            </slot>
+            <slot name="two">
+                <p>第二个位置</p>    
+            </slot>
+            <slot name="three">
+                <p>第三个位置</p>    
+            </slot>
+            <slot>我就要你</slot>
+        </div>
+       ` 
+    })
+    new Vue({
+        el:'#app'
+    })
+</script>
+</html>

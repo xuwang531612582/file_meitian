@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <xuwang>
+            <ul slot='ul-slot'>
+                <li>222</li>
+                <li>333</li>
+                <li>444</li>
+                <li>替换默认的位置</li>
+            </ul>
+       </xuwang>
+    </div>
+
+    <template id='aaa'>
+        <div>
+            <h1>
+                slot 开始
+            </h1>
+    
+            <slot>
+                ul-slot 位置
+            </slot>
+        </div>
+      
+    </template>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:'aaa'
+        },
+        components:{
+            'xuwang':{
+                template:'#aaa'
+            }
+        }
+        
+    })
+</script>
+</html>

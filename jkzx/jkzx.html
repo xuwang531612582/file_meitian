@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>监控坐席</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+
+
+    .bordered {
+        /* *border-collapse: collapse;  */
+        background: white;
+        border-spacing: 0;
+        width: 900px;
+        margin-left: 15px;
+        opacity: 0.5;    
+    }
+
+    .bordered {
+        border: solid #ccc 1px;
+        border-radius: 6px;
+        box-shadow: 0 1px 1px #ccc;         
+    }
+
+    .bordered tr:hover {
+        background:blue; 
+        color: yellow;
+    }    
+        
+    .bordered td, .bordered th {
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;    
+    }
+
+    .bordered th {
+        text-align: center;
+        box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+        border-top: none;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+
+    /* .bordered td:first-child, .bordered th:first-child {
+        border-left: none;
+    } */
+
+    .bordered th:first-child {
+        border-radius: 6px 0 0 0;
+    }
+
+    .bordered th:last-child {
+        border-radius: 0 6px 0 0;
+    }
+
+    .bordered th:only-child{
+        border-radius: 6px 6px 0 0;
+    }
+
+    .bordered tr:last-child td:first-child {
+        border-radius: 0 0 0 6px;
+    }
+
+    .bordered tr:last-child td:last-child {
+        border-radius: 0 0 6px 0;
+    }
+
+    *{margin: 0;padding: 0;}
+    .button{
+        width: 126px;
+        padding: 5px 10px;
+        border: 1px solid #c5c5c5;
+        background:  white;
+        color: black;
+        border-radius: 5px;
+        font-size: 20px;
+        
+    }
+    .button:hover{
+        color: yellow;
+        background: blue;
+    }
+    h1{
+        float: left;
+    }
+    input{
+        float: left;
+        width: 200px;
+        height: 35px;
+        border-radius: 6px;
+        border: 1px solid #c5c5c5;
+        outline:none;
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .button,input{
+        float: left;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+    .tr_info{
+        float: left;
+        width: 500px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin:12px 0 0 50px;
+        border-radius: 5px;
+        color: rgb(243, 84, 10);
+    }
+</style>
+</head>
+
+<body>
+<div style="width:1200px;height:50px;margin-bottom:10px;margin-left:20px;">
+    <h1>坐席监控</h1>
+    <input type="text" id="search">
+    <button class="button">坐席查询</button>
+    <table class="tr_info"></table>
+</div>
+<table class="bordered" style="float:left;">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>坐席编码</th>        
+        <th>话务坐席</th>
+        <th>系统角色</th>
+        <th>登陆用户名</th>        
+        <th>登陆账号</th>
+        <th>坐席状态</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>1</td> 
+        <td class='code'>17120800042088</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>2</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>3</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>4</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>5</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>6</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>7</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>8</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>9</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>10</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>11</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>12</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>13</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>14</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>15</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>16</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>17</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>18</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>19</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>20</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>21</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td class='code'>17120800042099</td>   
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+    <tr>
+        <td>23</td> 
+        <td class='code'>17120800042099</td>       
+        <td>8001</td>
+        <td>热线办接线员</td>
+        <td>张三</td>        
+        <td>admin</td>
+        <td>忙碌</td>
+    </tr>
+</table>
+
+
+    
+
+</body>
+<script src="jkzx.js"></script>
+</html>
