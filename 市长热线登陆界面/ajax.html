@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+        <div class="login">
+                <form id="insert_form" novalidate="novalidate">
+                    <div id="bigbox">
+                        
+                        <!--用户名输入框-->
+                        <div class="login_R_D_div">
+                            <div id="username"  class="login_R_D_user">
+                                   <input type="text" name="i_oper" id="i_oper" placeholder="  用户名"/>
+                            </div>
+                        </div>
+                        <div class="login_R_D_div">
+                            <!--密码输入框-->
+                            <div id="password"  class="login_R_D_psw">
+                                <input type="password" name="i_pass" id="i_pass" placeholder="  密码"/>
+                            </div>
+                        </div>
+                        <!--登录框-->
+                        <div id="register" class="clearfix login_R_D_btn">
+                            <div class="login_R_D_btn" style="float: left;margin:0 50px 0 120px;">
+                                <div id="btn_ajax_login" class="fr login_btn">登录</div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+</body>
+<script>
+    $(function(){
+        $('#btn_ajax_login').click(function(){
+			var _query_string = $('#insert_form').serializeObject();           
+			common.f_ajax_request_with_json('username',{
+                    tag : 'auth',
+                    ali : null,
+                    db  : 'dataSource',
+                    cmd : 5!=null && 5!=undefined ? 5 : 4,
+                    arg : $('#insert_form').serializeObject() ? $('#insert_form').serializeObject() : [],
+                    pag : 1!=null && 1!=undefined ? 1 : 25,
+                    cur : 1!=null && 1!=undefined ? 1 : 1,
+                    srt : [] ? [] : [],
+                    col : [] ? [] : []
+                    },function showRequest( _response){
+                if( _response.succ ){
+                    var _user_name = $('#a_oper').val();
+                    var _pass_word = $('#a_pass').val();
+                    common.f_manipulate_cookie("username", _user_name, {expires: 7});
+                    $(function(){location.href = "12345.html";});
+                }else{
+                    alert(_response.msg);
+                    return false;
+                }
+            });
+            return false;
+		});
+    });
+
+
+
+
+
+
+</script>
+</html>

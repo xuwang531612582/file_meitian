@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        *{margin: 0;padding: 0;}
+        body{
+            width: 100%;
+            height: 100%;
+            background: url(login_background_7.jpg) no-repeat center;
+            background-size: 100%;
+            opacity: 0.8;
+            /* background:#7694ed; */
+            padding-top:88px;
+        }
+        #img_szrx{
+            width:281px;
+            height: 150px;
+            margin:20px auto;
+            background: url("huaihua.png") no-repeat center;
+            background-size: 60%;
+        }
+        #login_input{
+            width: 353px;
+            height: 250px;
+            margin: 5px auto;
+        }
+        #bigbox{
+            width: 350px;
+            height: 230px;
+            /* background: #fff; */
+            border-radius: 20px;
+            border:1px solid #ccc;
+        }
+        #caption{
+            padding-top: 10px;
+            text-align: center;
+        }
+        #caption h3{
+            margin-top: 10px;
+            color: #4257f7;
+            font-size: 14px;
+            font-family: "??????";
+        }
+        #caption p{
+            font-size: 12px;
+            color: white;
+        }
+        #username input{
+            display: inline-block;
+            width: 310px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-left: 20px;
+            margin-top: 20px;
+            border-left: 2px solid #3474BC;
+            text-indent:5px;
+        }
+
+        #password input{
+            display: inline-block;
+            width: 310px;
+            height: 30px;
+            border: 1px solid #ccc;
+            margin-left: 20px;
+            margin-top: 20px;
+            border-left: 2px solid red;
+            text-indent:5px;
+        }
+        #register{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        #register #checkbox{
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        #register #checkbox input{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        #register #button{
+            display:inline-block;
+        }
+        #register #button a{
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            display: inline-block;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            background: #3474BC;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+        #register #btn_ajax_login{
+            text-align: center;
+            font-size: 14px;
+            color: #42a1ff;
+            display: inline-block;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            /* background: #3a84d7; */
+            background: white;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+        #register #btn_ajax_login:hover{
+            cursor: pointer;
+            background: #419bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="img_szrx"></div>
+    <div id="login_input">
+        <form id="insert_form" novalidate="novalidate">
+            <div id="bigbox">
+                <div id="caption">
+                    <h3>怀化市12345社会求助服务中心</h3>
+                    <p>ChangDe mayor hotline centralized processing center</p>
+                </div>
+                <div class="login_R_D_div">
+                    <div id="username"  class="login_R_D_user">
+                            <input type="text" name="i_oper" id="i_oper" placeholder="  用户名"/>
+                    </div>
+                </div>
+                <div class="login_R_D_div">
+                    <!--密码输入框-->
+                    <div id="password"  class="login_R_D_psw">
+                        <input type="password" name="i_pass" id="i_pass" placeholder="  密码"/>
+                    </div>
+                </div>
+                <!--登录框-->
+                <div id="register" class="clearfix login_R_D_btn">
+                    <div class="login_R_D_btn" style="float: left;margin:0 50px 0 120px;">
+                        <div id="btn_ajax_login" class="fr login_btn">登录</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
